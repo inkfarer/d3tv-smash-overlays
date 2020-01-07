@@ -12,7 +12,7 @@ const clrBlue = "#3F51B5";
 plusA.onclick = () => { scoreA.value++; };
 minusA.onclick = () => { scoreA.value--; };
 plusB.onclick = () => { scoreB.value++; };
-minusB.onclick = () => { scoreA.value--; };
+minusB.onclick = () => { scoreB.value--; };
 
 //changing scores by their inputs
 displayA.addEventListener('input', (event) => { scoreA.value = Number(event.target.value); });
@@ -20,7 +20,7 @@ displayB.addEventListener('input', (event) => { scoreB.value = Number(event.targ
 
 //when text boxes get typed in, remind user to update
 const toAddListeners = ["nameAInput", "nameBInput", "flavorInput"];
-toAddListeners.forEach(element => { document.getElementById(element).addEventListener('input', () => {changeButtonColor(clrRed); })});
+toAddListeners.forEach(element => { document.getElementById(element).addEventListener('input', () => { changeButtonColor(clrRed); })});
 
 //handle replicant changes
 scoreA.on('change', (newValue) => { displayA.value = newValue; });
@@ -35,6 +35,13 @@ updateNames.onclick = () => {
     flavorText.value = flavorInput.value;
     changeButtonColor(clrBlue);
 };
+
+beginNext.onclick = () => {
+    scoreA.value = 0; scoreB.value = 0;
+    nameA.value = nextNameAInput.value;
+    nameB.value = nextNameBInput.value;
+    nextNameAInput.value = ""; nextNameBInput.value = "";
+}
 
 //everything else
 
