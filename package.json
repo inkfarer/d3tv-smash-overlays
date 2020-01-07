@@ -1,0 +1,43 @@
+{
+  "name": "d3tv-smash-overlays",
+  "version": "0.0.0",
+  "description": "Overlays for D3vil_TV's Smash Bros. tournament livestreams",
+  "homepage": "https://github.com/inkfarer/d3tv-smash-overlays",
+  "author": {
+    "name": "inkfarer",
+    "email": "inkfarer@gmail.com",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "scoring",
+        "title": "Scoring",
+        "width": 2,
+        "file": "scoring.html",
+        "workspace": "Devil smash",
+        "headerColor": "#262F40"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "main.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "MIT"
+}
