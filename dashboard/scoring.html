@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-	<style>
-		.monospace {
-			font-family: monospace;
-		}
-	</style>
+	<meta charset="UTF-8">
+	<script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+	<link rel="import" href="../bower_components/font-roboto/roboto.html">
+	<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+	<link rel="import" href="../bower_components/paper-button/paper-button.html">
+	<link rel="import" href="../bower_components/paper-input/paper-input.html">
+	<custom-style>
+		<style include="iron-flex iron-flex-alignment" is="custom-style">
+			paper-button {
+				margin: 2px;
+				color: #FFFFFF;
+				font-family: 'Roboto', 'Noto', sans-serif;
+				font-weight: normal;
+				font-size: 14px;
+				-webkit-font-smoothing: antialiased;
+			}
+			.counter {
+				font-size: 1em;
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-top: -30px;
+				--paper-input-font-size: 75px;
+				--paper-input-container-input-webkit-spinner: {display: none};
+				--primary-text-color: #FFFFFF;
+				--paper-input-container-input: {
+					font-size: 3em;
+					text-align: center;
+				}
+			}
+			.scoreMinus, .scorePlus {
+				min-width: 50px;
+				max-width: 50px;
+				max-height: 30px;
+			}
+			paper-button[disabled] {
+				color: #A9AAA9;
+				background-color: #181E29 !important;
+			}
+			.nameInput {
+				margin-top: -10px;
+				margin-left: 5px;
+				margin-right: 5px;
+				--primary-text-color: #FFFFFF;
+				--paper-input-container-focus-color: #3F51B5;
+			}
+			paper-button {
+				background-color: #3F51B5;
+			}
+		</style>
+	</custom-style>
 </head>
 <body>
-	<p>
-		Hello, I'm one of the panels in your bundle!
-		I'm where you put your controls.
-	</p>
+	<div class= "layout horizontal">
+		<div class="layout vertical">
+			<paper-button class="scorePlus" id="plusA" raised style="background-color: #5BA664;">+</paper-button>
+			<paper-button class="scoreMinus" id="minusA" raised style="background-color: #C9513E;">-</paper-button>
+		</div>
+		<paper-input class="counter" value="0" id="displayA" type="number"></paper-input>
+		<div style= "color: #FFFFFF; font-size: 2.5em;"> : </div>
+		<paper-input class="counter" value="0" id="displayB" type="number"></paper-input>
+		<div class="layout vertical">
+			<paper-button class="scorePlus" id="plusB" raised style="background-color: #5BA664;">+</paper-button>
+			<paper-button class="scoreMinus" id="minusB" raised style="background-color: #C9513E;">-</paper-button>
+		</div>
+	</div>
+	<div class="layout vertical">
+		<div class="layout horizontal">
+			<paper-input label="Player 1 name" class="nameInput" id="nameAInput"></paper-input>
+			<paper-input label="Player 2 name" class="nameInput" id="nameBInput"></paper-input>
+		</div>
+		<paper-input class="nameInput" label="Flavor text" id="flavorInput"></paper-input>
+		<paper-button id="updateNames">Update</paper-button>
+	</div>
 
-	<p>To edit me, open "<span id="path" class="monospace"></span>" in your favorite text editor or IDE.</p>
-
-	<p>
-		You can use any libraries, frameworks, and tools you want.
-		The only limit of panels is that they cannot render outside of their
-		<span class="monospace">&lt;iframe&gt;</span>'s bounding box.
-	</p>
-
-	<p>Visit <a href="https://nodecg.com" target="_blank" rel="noopener">https://nodecg.com</a> for full documentation.</p>
-
-	<p>You've got this!</p>
-
-	<script>
-		document.getElementById('path').textContent = `nodecg${window.location.pathname}`;
-
-		// You can access the NodeCG api anytime from the `window.nodecg` object
-		// Or just `nodecg` for short. Like this!:
-		nodecg.log.info('Here\'s an example of using NodeCG\'s logging API!');
-	</script>
+	<script src="scoring.js"></script>
 </body>
 </html>
