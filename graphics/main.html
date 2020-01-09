@@ -1,20 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
+	<script src="../bower_components/webcomponentsjs/webcomponents-loader.js"></script>
+	<link rel="import" href="../bower_components/sc-fitted-text/sc-fitted-text.html">
+	<script src="../bower_components/gsap/src/minified/TweenMax.min.js"></script>
+	<script src="../bower_components/gsap/src/minified/TimelineMax.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:700,700i|Work+Sans:700&display=swap" rel="stylesheet">
 	<style>
 		body {
-			font-family: sans-serif;
+			font-family: 'Monsterrat', sans-serif;
+			font-weight: 700;
 		}
 
 		.monospace {
 			font-family: monospace;
 		}
+		#tempImg {
+			position: absolute;
+			width: 1920px;
+			height: 1080px;
+			top: 0;
+			left: 0;
+			z-index: -999;
+		}
+		#scoreboard {
+			width: 400px;
+			height: 110px;
+			position: absolute;
+			left: -1px;
+			top: -1px;
+			box-shadow:0 0 20px rgba(255, 0, 0, 1), inset 0 0 16px rgba(255, 0, 0, 1);
+			-moz-box-shadow: 0 0 20px rgba(255, 0, 0, 1), inset 0 0 16px rgba(255, 0, 0, 1);
+			-webkit-box-shadow: 0 0 20px rgba(255, 0, 0, 1), inset 0 0 16px rgba(255, 0, 0, 1);
+			border-radius: 15px;
+			overflow: hidden;
+			z-index: initial;
+			border: 0.75px solid #FF7676;
+		}
+		#scoreboard::before {
+			content: " ";
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			border: 0.75px solid #FF0000;
+			border-radius: 14.4px;
+			width: 398.3px;
+			height: 108.5px;
+			z-index: 20;
+		}
+		#flavorBG {
+			position: relative;
+			top: 0;
+			left: 0;
+			height: 30px;
+			width: 400px;
+			background-color: #111;
+			z-index: -1;
+		}
+		#flavorText {
+			position: absolute;
+			color: white;
+			font-size: 1.3em;
+			margin-top: 5px;
+			left: 10px;
+			font-style: italic;
+		}
+		.white-glow {
+			text-shadow: 0 0 3px #FFF;
+		}
+		.playerBG {
+			height: 40px;
+			width: 400px;
+			position: relative;
+			left: 0;
+			margin: 0;
+			padding: 0;
+			z-index: -1;
+		}
+		#p1BG {
+			background-color: #222;
+		}
+		#p2BG {
+			background-color: #222;
+		}
+		#p1Name {
+			top: 1px;
+		}
+		#p2Name {
+			bottom: 2px;
+		}
+		#scWrapper {
+			z-index: 10;
+			width: 400px;
+			height: 110px;
+			position: absolute;
+			left: 50px;
+			top: 35px;
+			border: 1.5px solid #FF0000;
+			border-radius: 16px;
+		}
+		.pName {
+			color: white;
+			position: relative;
+			left: 12px;
+			font-size: 2em;
+		}
+		.playerScore {
+			color: white;
+			font-size: 2.25em;
+			margin: 0 auto;
+			margin-right: 3px;
+			line-height: 1.1em;
+			font-weight: 700;
+			font-family: 'Work Sans', sans-serif;
+		}
+		.scoreBG {
+			position: absolute;
+			right: 1px;
+			background-color: #111;
+			width: 45px;
+			height: inherit;
+			top: 0px;
+		}
 	</style>
 </head>
 <body>
-	<div id="p1score"></div>
-	<div id="p2score"></div>
+	<div id="scWrapper">
+		<div id="scoreboard">
+			<div id="flavorBG">
+				<sc-fitted-text id="flavorText" text="uwuwu" class="white-glow" max-width="380"></sc-fitted-text>
+			</div>
+			<div id="p1BG" class="playerBG">
+				<sc-fitted-text id="p1Name" class="pName white-glow" text="owowo" max-width="335"></sc-fitted-text>
+				<div class="scoreBG" class="p1scoreBG">
+					<sc-fitted-text id="p1score" class="playerScore white-glow" align="center" max-width="40"></sc-fitted-text>
+				</div>
+			</div>
+			<div id="p2BG" class="playerBG">
+				<sc-fitted-text id="p2Name" class="pName white-glow" text="uwuwu" max-width="335"></sc-fitted-text>
+				<div class="scoreBG" id="p2scoreBG">
+					<sc-fitted-text id="p2score" class="playerScore white-glow" align="center" max-width="40"></sc-fitted-text>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<img id="tempImg" src="HhyN9J8.jpg">
 
 	<script src="main.js"></script>
 </body>

@@ -76,29 +76,29 @@
 <body>
 	<div class= "layout horizontal">
 		<div class="layout vertical">
-			<paper-button class="scorePlus" id="plusA" raised>+</paper-button>
-			<paper-button class="scoreMinus" id="minusA" raised>-</paper-button>
+			<paper-button class="scorePlus" id="p1PlusB" raised>+</paper-button>
+			<paper-button class="scoreMinus" id="p1MinusB" raised>-</paper-button>
 		</div>
-		<paper-input class="counter" value="0" id="displayA" type="number"></paper-input>
+		<paper-input class="counter" value="0" id="p1Display" type="number"></paper-input>
 		<div style= "color: #FFFFFF; font-size: 2.5em;"> : </div>
-		<paper-input class="counter" value="0" id="displayB" type="number"></paper-input>
+		<paper-input class="counter" value="0" id="p2Display" type="number"></paper-input>
 		<div class="layout vertical">
-			<paper-button class="scorePlus" id="plusB" raised>+</paper-button>
-			<paper-button class="scoreMinus" id="minusB" raised>-</paper-button>
+			<paper-button class="scorePlus" id="p2PlusB" raised>+</paper-button>
+			<paper-button class="scoreMinus" id="p2MinusB" raised>-</paper-button>
 		</div>
 	</div>
 	<div class="layout vertical">
 		<div class="layout horizontal">
-			<paper-input label="Player 1 Name" class="nameInput" id="nameAInput"></paper-input>
-			<paper-input label="Player 2 Name" class="nameInput" id="nameBInput"></paper-input>
+			<paper-input label="Player 1 Name" class="nameInput" id="p1NameInput"></paper-input>
+			<paper-input label="Player 2 Name" class="nameInput" id="p2NameInput"></paper-input>
 		</div>
 		<paper-input class="nameInput" label="Flavor Text" id="flavorInput"></paper-input>
 		<paper-button id="updateNames">Update</paper-button>
 		<br>
 		<b>Next Match</b>
 		<div class="layout horizontal">
-			<paper-input label="Next Player 1 Name" class="nameInput" id="nextNameAInput"></paper-input>
-			<paper-input label="Next Player 2 Name" class="nameInput" id="nextNameBInput"></paper-input>
+			<paper-input label="Next Player 1 Name" class="nameInput" id="p1NextNameInput"></paper-input>
+			<paper-input label="Next Player 2 Name" class="nameInput" id="p2NextNameInput"></paper-input>
 		</div>
 		<paper-button id="beginNext" style="background-color: var(--red)">Begin next match</paper-button>
 	</div>

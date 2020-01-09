@@ -9,29 +9,29 @@ const clrBlue = "#3F51B5";
 //onchange, onclick, etc. goes gere
 
 //plus and minus buttons... could be done more gracefully but it's just 4 buttons
-plusA.onclick = () => { scoreA.value++; };
-minusA.onclick = () => { scoreA.value--; };
-plusB.onclick = () => { scoreB.value++; };
-minusB.onclick = () => { scoreB.value--; };
+p1PlusB.onclick = () => { scoreA.value++; };
+p1MinusB.onclick = () => { scoreA.value--; };
+p2PlusB.onclick = () => { scoreB.value++; };
+p2MinusB.onclick = () => { scoreB.value--; };
 
 //changing scores by their inputs
-displayA.addEventListener('input', (event) => { scoreA.value = Number(event.target.value); });
-displayB.addEventListener('input', (event) => { scoreB.value = Number(event.target.value); });
+p1Display.addEventListener('input', (event) => { scoreA.value = Number(event.target.value); });
+p2Display.addEventListener('input', (event) => { scoreB.value = Number(event.target.value); });
 
 //when text boxes get typed in, remind user to update
-const toAddListeners = ["nameAInput", "nameBInput", "flavorInput"];
+const toAddListeners = ["p1NameInput", "p2NameInput", "flavorInput"];
 toAddListeners.forEach(element => { document.getElementById(element).addEventListener('input', () => { changeButtonColor(clrRed); })});
 
 //handle replicant changes
-scoreA.on('change', (newValue) => { displayA.value = newValue; });
-scoreB.on('change', (newValue) => { displayB.value = newValue; });
-nameA.on('change', (newValue) => { nameAInput.value = newValue; });
-nameB.on('change', (newValue) => { nameBInput.value = newValue; });
+scoreA.on('change', (newValue) => { p1Display.value = newValue; });
+scoreB.on('change', (newValue) => { p2Display.value = newValue; });
+nameA.on('change', (newValue) => { p1NameInput.value = newValue; });
+nameB.on('change', (newValue) => { p2NameInput.value = newValue; });
 flavorText.on('change', (newValue) => { flavorInput.value = newValue; });
 
 updateNames.onclick = () => {
-    nameA.value = nameAInput.value;
-    nameB.value = nameBInput.value;
+    nameA.value = p1NameInput.value;
+    nameB.value = p2NameInput.value;
     flavorText.value = flavorInput.value;
     changeButtonColor(clrBlue);
 };
