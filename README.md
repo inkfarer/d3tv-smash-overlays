@@ -21,6 +21,7 @@ Otherwise:
 2.2. Install dependencies by running `npm install` and `bower install` in `nodecg/bundles/d3tv-smash-overlays`.
 
 3. For last.fm integration to work, create the configuration file at `nodecg/cfg/d3tv-smash-overlays.json`.
+
 Example configuration file:
 ```
 {
