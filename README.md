@@ -18,6 +18,7 @@ If you're using nodecg-cli:
 Otherwise:
 
 2.1. Clone d3tv-smash-overlays to `nodecg/bundles/d3tv-smash-overlays`.
+
 2.2. Install dependencies by running `npm install` and `bower install` in `nodecg/bundles/d3tv-smash-overlays`.
 
 3. For last.fm integration to work, create the configuration file at `nodecg/cfg/d3tv-smash-overlays.json`.
