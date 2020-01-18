@@ -1,4 +1,4 @@
-#d3tv-smash-overlays
+# d3tv-smash-overlays
 
 A [NodeCG](http://github.com/nodecg/nodecg) bundle made for a Smash Bros. tournament hosted by [D3vil_TV.](https://www.twitch.tv/d3vil_tv)
 
