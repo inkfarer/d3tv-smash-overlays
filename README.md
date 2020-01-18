@@ -12,9 +12,11 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle made for a Smash Bros. tourna
 1. Install NodeCG and [nodecg-cli](https://github.com/nodecg/nodecg-cli) (optional)
 
 If you're using nodecg-cli:
+
 	2.1. Run `nodecg install inkfarer/d3tv-smash-overlays`.
 
 Otherwise:
+
 	2.1. Clone d3tv-smash-overlays to `nodecg/bundles/d3tv-smash-overlays`.
 	2.2. Install dependencies by running `npm install` and `bower install` in `nodecg/bundles/d3tv-smash-overlays`.
 
