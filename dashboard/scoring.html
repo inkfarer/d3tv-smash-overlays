@@ -28,6 +28,8 @@
 				font-size: 14px;
 				-webkit-font-smoothing: antialiased;
 				background-color: var(--blue);
+				display: block;
+				text-align: center;
 			}
 			.counter {
 				font-size: 1em;
@@ -43,8 +45,8 @@
 				}
 			}
 			.scoreMinus, .scorePlus {
-				min-width: 50px;
-				max-width: 50px;
+				min-width: 40px;
+				max-width: 40px;
 				max-height: 30px;
 			}
 			.scoreMinus {
@@ -64,17 +66,24 @@
 				--primary-text-color: #FFFFFF;
 				--paper-input-container-focus-color: var(--blue);
 			}
-			br {
-				margin-top: 15px;
-			}
 			b {
 				text-align: center;
+				display: block;
+			}
+			.space {
+                background-color: #262F40;
+                border-radius: 8px;
+                padding: 10px;
+                margin-bottom: 5px;
+            }
+			#updateNextNames {
+				margin-bottom: 5px;
 			}
 		</style>
 	</custom-style>
 </head>
 <body>
-	<div class= "layout horizontal">
+	<div class="layout horizontal space">
 		<div class="layout vertical">
 			<paper-button class="scorePlus" id="p1PlusB" raised>+</paper-button>
 			<paper-button class="scoreMinus" id="p1MinusB" raised>-</paper-button>
@@ -88,19 +97,23 @@
 		</div>
 	</div>
 	<div class="layout vertical">
-		<div class="layout horizontal">
-			<paper-input label="Player 1 Name" class="nameInput" id="p1NameInput"></paper-input>
-			<paper-input label="Player 2 Name" class="nameInput" id="p2NameInput"></paper-input>
+		<div class="space">
+			<div class="layout horizontal">
+				<paper-input label="Player 1 Name" class="nameInput" id="p1NameInput"></paper-input>
+				<paper-input label="Player 2 Name" class="nameInput" id="p2NameInput"></paper-input>
+			</div>
+			<paper-input class="nameInput" label="Flavor Text" id="flavorInput"></paper-input>
+			<paper-button id="updateNames">Update</paper-button>
 		</div>
-		<paper-input class="nameInput" label="Flavor Text" id="flavorInput"></paper-input>
-		<paper-button id="updateNames">Update</paper-button>
-		<br>
-		<b>Next Match</b>
-		<div class="layout horizontal">
-			<paper-input label="Next Player 1 Name" class="nameInput" id="p1NextNameInput"></paper-input>
-			<paper-input label="Next Player 2 Name" class="nameInput" id="p2NextNameInput"></paper-input>
+		<div class="space">
+			<b>Next Match</b>
+			<div class="layout horizontal">
+				<paper-input label="Next P1 Name" class="nameInput" id="p1NextNameInput"></paper-input>
+				<paper-input label="Next P2 Name" class="nameInput" id="p2NextNameInput"></paper-input>
+			</div>
+			<paper-button id="updateNextNames">Update</paper-button>
+			<paper-button id="beginNext" style="background-color: var(--red)">Begin next match</paper-button>
 		</div>
-		<paper-button id="beginNext" style="background-color: var(--red)">Begin next match</paper-button>
 	</div>
 
 	<script src="scoring.js"></script>
